@@ -126,7 +126,7 @@ public class RecipeUI {
         //addRecipeメソッド呼び出し
         fileHandler.addRecipe(inputRecipeName, inputIngredients);
 
-        System.out.println("Recipe added successfully.");
+        System.out.print("Recipe added successfully.");
     }
 
     /**
