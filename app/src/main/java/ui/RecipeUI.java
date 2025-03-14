@@ -121,7 +121,7 @@ public class RecipeUI {
         String inputRecipeName = reader.readLine();
 
         //主な材料名入力
-        System.out.println("Enter main ingredients (comma separated):");
+        System.out.print("Enter main ingredients (comma separated):");
         String inputIngredients = reader.readLine();
         //addRecipeメソッド呼び出し
         fileHandler.addRecipe(inputRecipeName, inputIngredients);
