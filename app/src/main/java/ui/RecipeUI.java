@@ -64,7 +64,7 @@ public class RecipeUI {
      * 設問1: 一覧表示機能
      * RecipeFileHandlerから読み込んだレシピデータを整形してコンソールに表示します。
      */
-    private void displayRecipes() throws Exception{
+    private void displayRecipes() throws IOException{
         // try {
 
         // } catch (IOException e) {
@@ -105,8 +105,10 @@ public class RecipeUI {
                 System.out.println(text2);
                 System.out.println("-----------------------------------");
             }
+        }catch (IOException e) {
+            System.out.println("Error reading file:" + e.getMessage());
         }catch(Exception e){
-                System.out.println("Error reading file:" + e.getMessage());
+            System.out.println(e.getMessage());
         }
     }
 
