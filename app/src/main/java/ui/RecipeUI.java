@@ -72,13 +72,8 @@ public class RecipeUI {
         // }
 
         try{
-            //recipeFileHandlerのインスタンス化
-            RecipeFileHandler recipeFileHandler = new RecipeFileHandler();
             //menuListにrecipeFileHandlerを追加する
-            ArrayList<String> menuList = new ArrayList<>();
-            for(String recipe : recipeFileHandler.readRecipes()){
-                menuList.add(recipe);
-            }
+            ArrayList<String> menuList = fileHandler.readRecipes();
             
             //読み込んだレシピデータが空の場合に例外処理
             if(menuList.size() == 0){
@@ -128,10 +123,8 @@ public class RecipeUI {
         //主な材料名入力
         System.out.println("Enter main ingredients (comma separated):");
         String inputIngredients = reader.readLine();
-        //インスタンス化
-        RecipeFileHandler recipeFileHandler = new RecipeFileHandler();
         //addRecipeメソッド呼び出し
-        recipeFileHandler.addRecipe(inputRecipeName, inputIngredients);
+        fileHandler.addRecipe(inputRecipeName, inputIngredients);
 
         System.out.println("Recipe added successfully.");
     }
@@ -163,10 +156,9 @@ public class RecipeUI {
         }
 
         //recipes.txtからテキストを受ける
-        RecipeFileHandler recipeFileHandler = new RecipeFileHandler();
         String text2 = "";
         //nameとingredientが含まれていたら出力
-        for(String recipeList : recipeFileHandler.readRecipes()){
+        for(String recipeList : fileHandler.readRecipes()){
             //レシピから料理名、主な材料名を分ける
             String dishName = "";
             String ingredientName = "";
